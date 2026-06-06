@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watchlist</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+
+  <div id="login-screen">
+
+    <div class="login-box">
+
+      <h1>🎬 Watchlist</h1>
+
+      <input type="email" id="email" placeholder="Email">
+
+      <input type="password" id="password" placeholder="Senha">
+
+      <button id="login-btn">
+        Entrar / Criar Conta
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- APP -->
+
+  <div id="app" class="hidden">
+
+    <header>
+
+    <h1 class="main-title">
+        🎬 Nossa Watchlist
+    </h1>
+
+    <nav class="menu">
+
+        <button onclick="showSection('movies-section')">
+        Filmes
+        </button>
+
+        <button onclick="showSection('series-section')">
+        Séries
+        </button>
+
+        <button onclick="showSection('add-section')">
+        Adicionar
+        </button>
+
+    </nav>
+
+    <button id="logout-btn" class="logout-btn">
+        Sair
+    </button>
+
+    </header>
+
+    <!-- ADICIONAR -->
+
+    <section
+    id="add-section"
+    class="add-section section-content hidden">
+
+      <input type="text"
+             id="title"
+             placeholder="Nome do filme ou série">
+
+      <select id="type">
+        <option value="Filme">Filme</option>
+        <option value="Série">Série</option>
+      </select>
+
+      <select id="platform">
+
+        <option value="Netflix">Netflix</option>
+        <option value="Prime Video">Prime Video</option>
+        <option value="Disney+">Disney+</option>
+        <option value="Max">Max</option>
+        <option value="Apple TV+">Apple TV+</option>
+        <option value="Crunchyroll">Crunchyroll</option>
+
+      </select>
+
+      <input type="file" id="image">
+
+      <button id="add-btn">
+        Adicionar
+      </button>
+
+    </section>
+
+    <!-- FILMES -->
+
+    <section
+    id="movies-section"
+    class="section-content">
+
+
+      <h2>📽 Filmes</h2>
+
+      <div id="movies-list" class="cards"></div>
+
+    </section>
+
+    <!-- SERIES -->
+
+    <section
+    id="series-section"
+    class="section-content hidden">
+
+      <h2>📺 Séries</h2>
+
+      <div id="series-list" class="cards"></div>
+
+    </section>
+
+  </div>
+
+  <script src="supabase.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
