@@ -22,7 +22,7 @@ document.getElementById("series-list");
 //bloqueio
 const allowedUsers = [
   "gomcalvesdiasleonardo@gmail.com",
-  "emaildela@gmail.com"
+  "alineschafascheck@yahoo.com"
 ];
 
 // LOGIN
